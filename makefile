@@ -8,4 +8,6 @@ shell:
 add_requirements:
 	pip freeze > requirements.txt
 install_requirements:
-	pip install -r requirements.txt	
+	pip install -r requirements.txt
+start:	
+	gunicorn -w 2 -b 77.79.185.10:8080 drfsite.wsgi
