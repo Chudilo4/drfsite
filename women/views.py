@@ -18,7 +18,7 @@ from women.permissions import IsAdminOrReadOnly, IsOwnerOrReadOnly
 class WomenAPIList(ListCreateAPIView):
     queryset = Women.objects.all()
     serializer_class = WomenSerializer
-    #permission_classes = (IsAuthenticatedOrReadOnly, )
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
 
 class WomenAPIUpdate(RetrieveUpdateAPIView):
