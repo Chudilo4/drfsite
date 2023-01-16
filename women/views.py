@@ -1,6 +1,6 @@
 from django.forms import model_to_dict
 from django.shortcuts import render
-from rest_framework.generics import ListAPIView
+from rest_framework.generics import ListAPIView, ListCreateAPIView
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -14,6 +14,10 @@ from women.serializers import WomenSerializer
 # class WomenAPIView(ListAPIView):
 #     queryset = Women.objects.all()
 #     serializer_class = WomenSerializer
+
+class WomenAPIList(ListCreateAPIView):
+    queryset = Women.objects.all()
+    serializer_class = WomenSerializer
 
 
 class WomenAPIView(APIView):
